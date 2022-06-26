@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import { getSuperHeroes } from "../service/service";
 
 export const RQSuperHeroesPage = () => {
@@ -10,9 +11,9 @@ export const RQSuperHeroesPage = () => {
     getSuperHeroes,
     {
       enabled: false,
-      select: (data) => {
+      /*  select: (data) => {
         return data.data.map((hero) => hero.name);
-      },
+      }, */
     }
   );
 
@@ -29,14 +30,18 @@ export const RQSuperHeroesPage = () => {
       <h1>React Query Super Heroes Page</h1>
       <h2>Super Heroes List</h2>
       <ul>
-        {/* {data?.data.map(superHero => {
+        {data?.data.map((superHero) => {
           return (
-            <li key={superHero.id}>{superHero.name}</li>
-          )
-        })} */}
-        {data?.map((superHeroName, index) => {
-          return <li key={index}>{superHeroName}</li>;
+            <li key={superHero.id}>
+              <Link to={`/rq-super-hero/${superHero.id}`}>
+                {superHero.name}
+              </Link>
+            </li>
+          );
         })}
+        {/*  {data?.map((superHeroName, index) => {
+          return <li key={index}>{superHeroName}</li>;
+        })} */}
       </ul>
       <button onClick={refetch}>Get Heroes</button>
     </div>
