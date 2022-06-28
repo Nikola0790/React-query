@@ -30,5 +30,9 @@
     { "id": 1, "name": "bmw" },
     { "id": 2, "name": "ford" },
     { "id": 3, "name": "fiat" }
+  ],
+  "users": [{ "courseId": "course_1", "id": "test@email.com" }],
+  "courses": [
+    { "id": "course_1", "coursesType": ["react", "angular", "JS", "Python"] }
   ]
 }
