@@ -21,3 +21,13 @@ export const getCars = async () => {
   const results = await axios.get("http://localhost:4000/cars");
   return results;
 };
+
+export const getUsers = async (email) => {
+  const result = await axios.get(`http://localhost:4000/users/${email}`);
+  return result;
+};
+
+export const getCourse = async (courseId) => {
+  const result = await axios.get(`http://localhost:4000/courses/${courseId}`);
+  return result;
+};
