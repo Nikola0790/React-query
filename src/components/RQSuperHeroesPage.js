@@ -1,8 +1,12 @@
-import { useQuery } from "react-query";
+import { useState } from "react";
+import { useQuery, useMutation } from "react-query";
 import { Link } from "react-router-dom";
-import { getSuperHeroes } from "../service/service";
+import { getSuperHeroes, addNewHeroReq } from "../service/service";
 
 export const RQSuperHeroesPage = () => {
+  const [name, setName] = useState("");
+  const [alterEgo, setAlterEgo] = useState("");
+
   // enabled: boolean - Set this to false to disable this query from automatically running.
   // refetch: A function to manually refetch the query.
   // select - use for Data Transformation
@@ -17,8 +21,20 @@ export const RQSuperHeroesPage = () => {
     }
   );
 
-  if (isLoading || isFetching) {
-    return <p>Loading...</p>;
+  // ***************
+
+  const addNewHero = (name, alterEgo) => {
+    const hero = {name, alterEgo};
+    mutate(hero);
+  }
+
+  const { mutate } = useMutation(addNewHeroReq);
+
+  console.log("isFetching",isFetching)
+  console.log("isLoading",isLoading)
+
+  if (isFetching) {
+    /* return <p>Loading...</p>; */
   }
 
   if (isError) {
@@ -28,6 +44,11 @@ export const RQSuperHeroesPage = () => {
   return (
     <div>
       <h1>React Query Super Heroes Page</h1>
+      <div>
+        <input type="text" placeholder="Enter hero name" value={name} onChange={(e) => setName(e.target.value)}></input>
+        <input type="text" placeholder="Enter hero alter ego" value={alterEgo} onChange={(e) => setAlterEgo(e.target.value)}></input>
+        <button onClick={() => addNewHero(name, alterEgo)}>Add Hero</button>
+      </div>
       <h2>Super Heroes List</h2>
       <ul>
         {data?.data.map((superHero) => {
