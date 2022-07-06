@@ -24,15 +24,62 @@
       "id": 5,
       "name": "Bananaman",
       "alterEgo": "Eric Wimp"
+    },
+    {
+      "name": "a",
+      "alterEgo": "a",
+      "id": 6
+    },
+    {
+      "name": "b",
+      "alterEgo": "b",
+      "id": 7
+    },
+    {
+      "name": "xx",
+      "alterEgo": "xx",
+      "id": 8
+    },
+    {
+      "name": "ggg",
+      "alterEgo": "g",
+      "id": 9
+    },
+    {
+      "name": "a",
+      "alterEgo": "aaaaaaaaa",
+      "id": 10
     }
   ],
   "cars": [
-    { "id": 1, "name": "bmw" },
-    { "id": 2, "name": "ford" },
-    { "id": 3, "name": "fiat" }
+    {
+      "id": 1,
+      "name": "bmw"
+    },
+    {
+      "id": 2,
+      "name": "ford"
+    },
+    {
+      "id": 3,
+      "name": "fiat"
+    }
   ],
-  "users": [{ "courseId": "course_1", "id": "test@email.com" }],
+  "users": [
+    {
+      "courseId": "course_1",
+      "id": "test@email.com"
+    }
+  ],
   "courses": [
-    { "id": "course_1", "coursesType": ["react", "angular", "JS", "Python"] }
+    {
+      "id": "course_1",
+      "coursesType": [
+        "react",
+        "angular",
+        "JS",
+        "Python"
+      ]
+    }
   ]
 }
