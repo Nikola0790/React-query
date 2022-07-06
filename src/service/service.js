@@ -31,3 +31,8 @@ export const getCourse = async (courseId) => {
   const result = await axios.get(`http://localhost:4000/courses/${courseId}`);
   return result;
 };
+
+export const addNewHeroReq = async (hero) => {
+  const result = await axios.post(`http://localhost:4000/superheroes`, hero);
+  console.log(result);
+}
